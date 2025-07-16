@@ -26,12 +26,21 @@
     }
   }
 
-  /* Corrige el alto del carrusel sin afectar su proporción */
-  .carousel-inner img {
+  /* Mantén la proporción 16:9 en el carrusel */
+  .carousel-aspect-ratio {
+    aspect-ratio: 16 / 9;
     width: 100%;
-    height: auto;
-    max-height: 600px;
+    overflow: hidden;
+    background: #f0f0f0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-aspect-ratio img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
   }
 </style>
 </head>
@@ -62,13 +71,19 @@
   <div id="carouselExampleAutoplaying" class="carousel slide mb-5" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://cdn.glitch.global/36c44514-d30c-4ab2-9652-0ee8662f7a7a/PRIMERA%20IMAGEN%20CARRUSEL.PNG?v=1751228432232" class="d-block w-100" alt="PRIMERA FOTO CARRUSEL">
+        <div class="carousel-aspect-ratio">
+          <img src="https://cdn.glitch.global/36c44514-d30c-4ab2-9652-0ee8662f7a7a/PRIMERA%20IMAGEN%20CARRUSEL.PNG?v=1751228432232" alt="PRIMERA FOTO CARRUSEL">
+        </div>
       </div>
       <div class="carousel-item">
-        <img src="https://cdn.glitch.global/36c44514-d30c-4ab2-9652-0ee8662f7a7a/SEGUNDA%20IMAGEN%20CARRUSEL.PNG?v=1751228444294" class="d-block w-100" alt="SEGUNDA FOTO CARRUSEL">
+        <div class="carousel-aspect-ratio">
+          <img src="https://cdn.glitch.global/36c44514-d30c-4ab2-9652-0ee8662f7a7a/SEGUNDA%20IMAGEN%20CARRUSEL.PNG?v=1751228444294" alt="SEGUNDA FOTO CARRUSEL">
+        </div>
       </div>
       <div class="carousel-item">
-        <img src="https://cdn.glitch.global/36c44514-d30c-4ab2-9652-0ee8662f7a7a/TERCERA%20IMAGEN%20CARRUSEL.PNG?v=1751228471996" class="d-block w-100" alt="TERCERA FOTO CARRUSEL">
+        <div class="carousel-aspect-ratio">
+          <img src="https://cdn.glitch.global/36c44514-d30c-4ab2-9652-0ee8662f7a7a/TERCERA%20IMAGEN%20CARRUSEL.PNG?v=1751228471996" alt="TERCERA FOTO CARRUSEL">
+        </div>
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -81,6 +96,10 @@
     </button>
   </div>
 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
   <!-- CONTENIDO PRINCIPAL SIGNET RING-->
   <div class="container py-3 mb-5">
       <div class="row align-items-center">
